@@ -30,17 +30,15 @@ class Lossncriterion(nn.Module):
         dice = (2 * intersection + smooth) / (inputs.pow(2).sum() + targets.pow(2).sum() + smooth)
         return 1 - dice
         
-    def forward(self, inputs, target, metric=False):
-        wbce, wiou = structure_loss(inputss, target)
+    def forward(self, inputs, target):
+        wbce, wiou = structure_loss(inputs, target)
         loss = wbce.mean() + wiou.mean()
-        
         return loss
 
     def boundary_forward(self, pred, gt):
         pred = nn.Sigmoid()(pred)
         gt = (F.conv2d(gt.float(), self.laplacian, stride=1, padding = 1) > 0.1).float()
         bce_loss = F.binary_cross_entropy_with_logits(pred, gt.expand(gt.size(0), pred.size(1), gt.size(2), gt.size(3)))
-        
         return bce_loss
 
 def structure_loss(pred, mask):
@@ -52,7 +50,6 @@ def structure_loss(pred, mask):
     inter = ((pred * mask)*weit).sum(dim=(2, 3))
     union = (pred*weit).sum(dim=(2, 3)) + (mask*weit).sum(dim=(2, 3))  #((pred + mask)*weit).sum(dim=(2, 3))
     wiou = 1 - (inter + 1)/(union - inter + 1)
-
     return wbce, wiou
 
 

@@ -1,0 +1,14 @@
+# pip install -r requirements.txt
+torch
+torchvision
+tqdm
+pillow
+numpy
+operator
+PIL
+json
+cv2
+PIL
+operator
+einops
+mmcv

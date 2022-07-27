@@ -18,7 +18,6 @@ class BasicConv2d(nn.Module):
 
     def forward(self, x):
         return self.bn(self.conv(x))
-        #return self.relu(self.bn(self.conv(x)))
         
 class Mish(nn.Module):
     def __init__(self):
