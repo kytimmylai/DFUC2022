@@ -6,26 +6,24 @@ import torch.utils.data as data
 import torch.nn.functional as F
 import torchvision.transforms.functional as tf
 from torch.utils.data.distributed import DistributedSampler
+from torch.cuda import amp
 
 import os
 import argparse
 import math
 import random
-import cv2
 import time
 import logging
 import matplotlib.pyplot as plt
 import numpy as np
 
-from datetime import datetime
 from tqdm import tqdm
 from utils.utils import AvgMeter, build_model
 from utils.dataloader import create_dataset
 from utils.ema import ModelEMA
 from utils.loss import Lossncriterion, structure_loss
-from utils.eval import EvalSeg
 from utils.optim import set_optimizer
-from torch.cuda import amp
+
 
 # -
 def arg_parser():
@@ -100,7 +98,7 @@ def test(model, criterion, test_loader):
             
         wbce, wiou = structure_loss(output, gt)
         dice = criterion.dice_coefficient(output, gt)
-            
+        
         mdice.update(dice.item(), 1)
         mwbce.update(wbce.item(), 1)
         mwiou.update(wiou.item(), 1)
