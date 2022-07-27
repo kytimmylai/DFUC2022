@@ -80,8 +80,8 @@ class create_dataset(data.Dataset):
             self.images = sorted(self.images)
             self.gts = sorted(self.gts)
             length = len(self.images)
-            mean, std = calculatemns(self.images, self.trainsize, self.rect)
-            print('mean:', mean, ' std:', std)
+            #mean, std = calculatemns(self.images, self.trainsize, self.rect)
+            #print('mean:', mean, ' std:', std)
             train_idx, val_idx = split_data(length, self.ratio, k=k, seed=seed, k_fold=k_fold)
             
             if train:
@@ -125,7 +125,7 @@ class create_dataset(data.Dataset):
         else:
             print("no data augmentation")
             self.transform = A.Compose([A.Resize(self.trainsize, self.trainsize)])
-        self.nom = transforms.Normalize(mean=mean, std=std)
+        self.nom = transforms.Normalize([0.6262, 0.5736, 0.5512], [0.1561, 0.1819, 0.1938])
         self.totensor = A.Compose([ToTensorV2()])
         
     def __getitem__(self, index):
