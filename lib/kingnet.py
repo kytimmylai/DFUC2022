@@ -234,14 +234,13 @@ class KingNet(nn.Module):
                 nn.Dropout(drop_rate),
                 nn.Linear(ch, 1000) ))
         
-        if(False):
+        if(pretrained):
             ##Modify: pretrained path
             weight_file = 'lib/kingnet53.pth'
             if not os.path.isfile(weight_file):
-                print(weight_file,'is not found')
+                print(weight_file, 'is not found')
                 exit(0)
             weights = torch.load(weight_file)
-
             state_dict=weights["state_dict"]
             new_state_dict = OrderedDict()
             for k, v in state_dict.items():
