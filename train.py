@@ -54,8 +54,6 @@ def arg_parser():
     parser.add_argument('--augmentation', action='store_true', help='activate data augmentation')
     parser.add_argument('--rect', action='store_true', help='padding the image into rectangle')
     parser.add_argument('--test', action='store_true', help='run test')
-    parser.add_argument('--tta', action='store_true', help='testing time augmentation')
-    parser.add_argument('--dp', action='store_true', help='testing time augmentation')
     return parser.parse_args()
 
 
@@ -87,7 +85,7 @@ def trainingplot(rec, name):
 
 
 
-def test(model, criterion, test_loader, epoch, tta):
+def test(model, criterion, test_loader):
     model.eval()
     mdice, mwbce, mwiou, omax, omin = AvgMeter(), AvgMeter(), AvgMeter(), AvgMeter(), AvgMeter()
     pbar = enumerate(test_loader)
@@ -205,23 +203,6 @@ if __name__ == '__main__':
         
         model = build_model(opt.modelname, opt.class_num, opt.arch)
         logging.info(model)
-        
-        if opt.dp:
-            torch.cuda.set_device(local_rank)
-            torch.distributed.init_process_group(backend='nccl')
-            torch.distributed.barrier()
-            world_size = torch.distributed.get_world_size()
-
-            train_sampler = DistributedSampler(training_data)
-            test_sampler = DistributedSampler(test_data)
-
-            train_loader = data.DataLoader(dataset=dataset, batch_size=batchsize, shuffle=shuffle, num_workers=num_workers, pin_memory=pin_memory)
-            test_loader = data.DataLoader(dataset=dataset, batch_size=batchsize, shuffle=shuffle, num_workers=num_workers, pin_memory=pin_memory)
-
-            device = torch.device("cuda", args.local_rank)
-            model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(model).to(device)
-            model = torch.nn.parallel.DistributedDataParallel(model)
-            
             
         optimizer = set_optimizer(model, opt.optimizer, opt.lr)
         logging.info(optimizer)
@@ -247,7 +228,7 @@ if __name__ == '__main__':
                 loss, deep1, deep2= train(train_loader, model, optimizer, epoch, opt, scaler, ema, criterion)
                 scheduler.step()
 
-                meandice, val_loss = test(model, criterion, test_loader, epoch, False)
+                meandice, val_loss = test(model, criterion, test_loader)
                 if meandice > best:
                     best = meandice
                     if best > 0.8:
@@ -268,4 +249,3 @@ if __name__ == '__main__':
         
         if opt.k != -1:
             break
-

@@ -73,9 +73,9 @@ def build_model(modelname='base', class_num=1, arch=53):
     if modelname == 'base' or modelname == '':
         model = KingMSEG(class_num=class_num).cuda()
     elif modelname == 'lawin':
-        model = KingMSEG_lawin_loss4(class_num=class_num, arch=arch, name='base').cuda()
+        model = KingMSEG_lawin_loss4(class_num=class_num).cuda()
     elif modelname == 'csplawin':
-        model = KingLawinMSEG(class_num=class_num, arch=arch, name='csp').cuda()
+        model = KingLawinMSEG(class_num=class_num).cuda()
     elif modelname == 'CSP':
         model = CSPKingMSEG(class_num=class_num).cuda()
 
