@@ -16,6 +16,7 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 ## Installation
 
 The related weights are available at https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing
+
 Download weights and place in the folder ``` /weights ``` 
 
 ```
@@ -26,16 +27,27 @@ pip install -r requirements.txt
 
 ## Evaluation
 
-
-
 ```
-python test.py --rect --modelname lawin --save_path mask_pred --tta v --test_path /path/to/testing/data
+python test.py 
+
+Optional Args:
+--rect         Padding image before resize to keep its aspect ratio
+--tta          Test time augmentation, 'v/h/vh' for verti/horiz/verti&horiz flip
+--weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
 ```
 
 ## Training
 
 ```
-python train.py --rect --modelname lawin --augmentation --train_path /path/to/training/data
+python train.py --rect --augmentation --train_path /path/to/training/data
+
+Optional Args:
+--rect         Padding image before resize to keep its aspect ratio
+--augmentation Activating data audmentation during training
+--kfold        Specifying the number of K-Fold Cross-Validation
+--k            Training the specific fold of K-Fold Cross-Validation
+--dataratio    Specifying the ratio of data spliting for training
+--seed         Reproduce the result of a data spliting
 ```
 
 Train w/ 5-fold

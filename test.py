@@ -28,9 +28,9 @@ def arg_parser():
     parser.add_argument('--test-size', type=int, default=512, help='training dataset size')
 
     parser.add_argument('--weight', nargs='+', type=str, default='weights', help='path to model weight')
-    parser.add_argument('--modelname', type=str, default='', help='choose model')
+    parser.add_argument('--modelname', type=str, default='lawin', help='choose model')
     parser.add_argument('--tta', type=str, default='', help='testing time augmentation')
-    parser.add_argument('--save_path', type=str, default='path to save mask')
+    parser.add_argument('--save_path', type=str, default='pred_mask', help='path to save mask')
     parser.add_argument('--test_path', nargs='+', type=str, default='../' , help='path to testing data')
     
     parser.add_argument('--rect', action='store_true', help='padding the image into rectangle')
