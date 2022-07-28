@@ -1,11 +1,8 @@
 # +
 import torch
 import torch.optim.lr_scheduler as lr_scheduler
-import torch.nn as nn
 import torch.utils.data as data
 import torch.nn.functional as F
-import torchvision.transforms.functional as tf
-from torch.utils.data.distributed import DistributedSampler
 from torch.cuda import amp
 
 import os
@@ -23,7 +20,6 @@ from utils.dataloader import create_dataset
 from utils.ema import ModelEMA
 from utils.loss import Lossncriterion, structure_loss
 from utils.optim import set_optimizer
-
 
 # -
 def arg_parser():
@@ -54,8 +50,6 @@ def arg_parser():
     parser.add_argument('--test', action='store_true', help='run test')
     return parser.parse_args()
 
-
-
 def trainingplot(rec, name):
     fig, ax = plt.subplots()
     ax2 = ax.twinx()
@@ -80,8 +74,6 @@ def trainingplot(rec, name):
     ax2.legend(loc='upper right')
     
     plt.savefig(name, dpi=300)
-
-
 
 def test(model, criterion, test_loader):
     model.eval()
@@ -111,8 +103,6 @@ def test(model, criterion, test_loader):
         
     return mdice.avg, mwbce.avg+mwiou.avg
 
-
-
 def train(train_loader, model, optimizer, epoch, opt, scaler, ema, criterion):
     model.train()
     loss_record, deep1, deep2, boundary = AvgMeter(), AvgMeter(), AvgMeter(), AvgMeter()
@@ -133,26 +123,20 @@ def train(train_loader, model, optimizer, epoch, opt, scaler, ema, criterion):
         # ---- forward ----
         with amp.autocast():
             output = model(images)
+            loss = criterion(output[0], gts)
+            deep_loss = criterion(output[1], gts)
+            deep_loss2 = criterion(output[2], gts)
+            boundary_loss = criterion.boundary_forward(output[3], gts)
             
-            if 'lawin' in opt.modelname:
-                loss = criterion(output[0], gts)
-                deep_loss = criterion(output[1], gts)
-                deep_loss2 = criterion(output[2], gts)
-                boundary_loss = criterion.boundary_forward(output[3], gts)
+            scaler.scale(loss).backward(retain_graph=True)
+            scaler.scale(deep_loss).backward(retain_graph = True)
+            scaler.scale(deep_loss2).backward(retain_graph = True)
+            scaler.scale(boundary_loss).backward()
                 
-                scaler.scale(loss).backward(retain_graph=True)
-                scaler.scale(deep_loss).backward(retain_graph = True)
-                scaler.scale(deep_loss2).backward(retain_graph = True)
-                scaler.scale(boundary_loss).backward()
-                    
-                loss_record.update(loss.item(), opt.batchsize)
-                deep1.update(deep_loss.item(), opt.batchsize)
-                deep2.update(deep_loss2.item(), opt.batchsize)
-                boundary.update(boundary_loss.item(), opt.batchsize)
-            else:
-                loss = criterion(output, gts)
-                scaler.scale(loss).backward()
-                loss_record.update(loss.data, opt.batchsize)
+            loss_record.update(loss.item(), opt.batchsize)
+            deep1.update(deep_loss.item(), opt.batchsize)
+            deep2.update(deep_loss2.item(), opt.batchsize)
+            boundary.update(boundary_loss.item(), opt.batchsize)
 
         scaler.step(optimizer)
         scaler.update()
