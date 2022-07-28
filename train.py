@@ -34,7 +34,7 @@ def arg_parser():
     parser.add_argument('--arch', type=int, default=53, help='backbone version')
     parser.add_argument('--class-num', type=int, default=1, help='output class')
     parser.add_argument('--kfold', type=int, default=1, help='# fold')
-    parser.add_argument('--k', type=int, default=-1, help='# fold')
+    parser.add_argument('--k', type=int, default=-1, help='specific # fold')
     parser.add_argument('--seed', type=int, help='random seed for split data')
     
     parser.add_argument('--lr', type=float, default=1e-4, help='learning rate')
@@ -46,7 +46,7 @@ def arg_parser():
     parser.add_argument('--name', type=str, default='exp', help='exp name to annotate this training')
     
     parser.add_argument('--optimizer', type=str, default='AdamW', help='choose optimizer')
-    parser.add_argument('--modelname', type=str, default='', help='choose model')
+    parser.add_argument('--modelname', type=str, default='lawin', help='choose model')
     parser.add_argument('--decoder', type=str, default='lawin', help='choose decoder')
     
     parser.add_argument('--augmentation', action='store_true', help='activate data augmentation')

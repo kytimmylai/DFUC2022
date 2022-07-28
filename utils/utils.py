@@ -6,7 +6,7 @@ from PIL import Image
 from thop import profile
 from thop import clever_format
 import torchvision.transforms as transforms
-from lib.HarDMSEG import *
+from lib.HarDMSEG import KingMSEG, KingMSEG_lawin_loss4, CSPKingMSEG
 
 # +
 def square_padding(image, w, h):
@@ -69,8 +69,6 @@ def build_model(modelname='base', class_num=1, arch=53):
         model = KingMSEG(class_num=class_num).cuda()
     elif modelname == 'lawin':
         model = KingMSEG_lawin_loss4(class_num=class_num).cuda()
-    elif modelname == 'csplawin':
-        model = KingLawinMSEG(class_num=class_num).cuda()
     elif modelname == 'CSP':
         model = CSPKingMSEG(class_num=class_num).cuda()
 

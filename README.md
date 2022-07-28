@@ -15,6 +15,9 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 
 ## Installation
 
+The related weights are available at https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing
+Download weights and place in the folder ``` /weights ``` 
+
 ```
 conda create -n dfuc python=3.6
 conda activate dfuc
@@ -23,8 +26,10 @@ pip install -r requirements.txt
 
 ## Evaluation
 
+
+
 ```
-python test.py --rect --modelname lawin --weight /path/to/weight/or/fold --save_path mask_pred --tta v --test_path /path/to/testing/data
+python test.py --rect --modelname lawin --save_path mask_pred --tta v --test_path /path/to/testing/data
 ```
 
 ## Training
