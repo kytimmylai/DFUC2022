@@ -7,6 +7,8 @@ from einops import rearrange
 from timm.models.layers import DropPath, to_2tuple, trunc_normal_
 import math
 
+# https://github.com/yan-hao-tian/lawin/blob/main/lawin_head.py
+
 class MLP(nn.Module):
     """
     Linear Embedding: github.com/NVlabs/SegFormer

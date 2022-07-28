@@ -3,6 +3,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+'''
+Copyright (c) 2020 NEUCHIPS CORPORATION
+All rights reserved.
+'''
+
 # +
 class Flatten(nn.Module):
     def __init__(self):

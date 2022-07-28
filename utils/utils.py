@@ -8,11 +8,6 @@ from thop import clever_format
 import torchvision.transforms as transforms
 from lib.HarDMSEG import *
 
-
-
-
-
-
 # +
 def square_padding(image, w, h):
     '''
