@@ -1,5 +1,12 @@
 # DFUC2022
 
+<p align="center">
+<img src="EnhancedVersion.png" width=100% height=100% 
+class="center">
+</p>
+
+We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
+
 ## Evaluation
 
 ```
