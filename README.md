@@ -12,6 +12,14 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 | HarDNet-MSEG  | 65.53  | 
 | **Enhanced version**  |  **70.63**  | 
 
+## Installation
+
+```
+conda create -n dfuc python=3.6
+conda activate dfuc
+pip install -r requirements.txt
+```
+
 ## Evaluation
 
 ```
