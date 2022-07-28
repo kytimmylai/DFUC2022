@@ -3,8 +3,6 @@ import cv2
 import os
 import numpy as np
 from PIL import Image
-from thop import profile
-from thop import clever_format
 import torchvision.transforms as transforms
 from lib.HarDMSEG import KingMSEG, KingMSEG_lawin_loss4, CSPKingMSEG
 
@@ -34,10 +32,7 @@ def square_unpadding(image, w, h):
         image = image[:, :, :, (abs(dif) + 1)//2: (abs(dif) + 1)//2 + w]
     
     
-    return image    
-
-
-# -
+    return image
 
 class AvgMeter(object):
     def __init__(self, num=40):
@@ -65,14 +60,8 @@ class AvgMeter(object):
 # +
 def build_model(modelname='base', class_num=1, arch=53):
     print('model:', modelname)
-    if modelname == 'base' or modelname == '':
-        model = KingMSEG(class_num=class_num).cuda()
-    elif modelname == 'lawin':
-        model = KingMSEG_lawin_loss4(class_num=class_num).cuda()
-    elif modelname == 'CSP':
-        model = CSPKingMSEG(class_num=class_num).cuda()
+    model = KingMSEG_lawin_loss4(class_num=class_num).cuda()
 
-    
     return model
 
 class confusion_matrix():
@@ -122,15 +111,11 @@ class confusion_matrix():
 def save_mask(output, save_path, name, threshold):
     mask = ((output > threshold)*255).astype(np.uint8)
     mask = Image.fromarray(mask)
-    #print(save_path)
-    #print(name)
     mask.save(os.path.join(save_path, name))
 
 def visualize_mask(output, save_path, name, threshold, img):
     mask = ((output > threshold)*255).astype(np.uint8)
-    #print(mask.shape)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
-    #print(img.shape)
     mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
     mask[..., 0] = 0
     mask[..., 2] = 0

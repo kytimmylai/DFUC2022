@@ -1,24 +1,16 @@
 # +
 import torch
-import torchvision.transforms as transforms
 import torchvision.transforms.functional as tf
 import torch.nn.functional as F
 import torch.nn as nn
 
-import glob
 import os
 import argparse
-import cv2
 import time
-import numpy as np
 
-from pathlib import Path
 from tqdm import tqdm
-from PIL import Image
-from utils.utils import AvgMeter, square_padding, square_unpadding, build_model, confusion_matrix, save_mask, visualize_mask
+from utils.utils import AvgMeter, square_unpadding, build_model, save_mask, visualize_mask
 from utils.dataloader import test_dataset
-
-
 # -
 
 def arg_parser():
