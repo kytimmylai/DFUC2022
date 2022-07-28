@@ -1,5 +1,4 @@
 # DFUC2022
-# MICCAI2022
 
 <p align="center">
 <img src="EnhancedVersion.png" width=100% height=100% 
