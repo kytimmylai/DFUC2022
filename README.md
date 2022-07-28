@@ -1,4 +1,5 @@
-# DFUC2022
+# Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
+Contains the prediction codes for our submission to the Foot Ulcer Segmentation Challenge 2022 (DFUC2022) at MICCAI2022.
 
 <p align="center">
 <img src="EnhancedVersion.png" width=100% height=100% 
