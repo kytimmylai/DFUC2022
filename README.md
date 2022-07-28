@@ -7,6 +7,11 @@ class="center">
 
 We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 
+| Method | DFUC <br> mIoU  |
+| :---: |  :---:  | 
+| HarDNet-MSEG  | 65.53  | 
+| **Enhanced version**  |  **70.63**  | 
+
 ## Evaluation
 
 ```
