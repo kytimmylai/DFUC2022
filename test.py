@@ -19,11 +19,11 @@ def arg_parser():
     parser.add_argument('--class-num', type=int, default=1, help='output class')
     parser.add_argument('--test-size', type=int, default=512, help='training dataset size')
 
-    parser.add_argument('--weight', nargs='+', type=str, default=['weights'], help='path to model weight')
-    parser.add_argument('--modelname', type=str, default='lawin', help='choose model')
+    parser.add_argument('--weight', nargs='+', type=str, default='weights/lawinloss4', help='path to model weight')
+    parser.add_argument('--modelname', type=str, default='lawinloss4', help='choose model')
     parser.add_argument('--tta', type=str, default='', help='testing time augmentation')
     parser.add_argument('--save_path', type=str, default='pred_mask', help='path to save mask')
-    parser.add_argument('--test_path', nargs='+', type=str, default='../' , help='path to testing data')
+    parser.add_argument('--test_path', nargs='+', type=str, default='../DFUC2022_val' , help='path to testing data')
     
     parser.add_argument('--rect', action='store_true', help='padding the image into rectangle')
     parser.add_argument('--visualize', action='store_true', help='visualize the ground truth and prediction on original image')
@@ -77,7 +77,7 @@ def test(model, test_data, fold_result, tta, rect, fold, k, visualize, save_path
         
         result.append(output)
             
-        pbar.set_description('FPS: %10.4g, threshold: %10.4g, %g-fold: %10.4g'%(FPS.avg, threshold, k, fold))
+        pbar.set_description('FPS: %7.4g, threshold: %7.4g, %g-fold: %gth'%(FPS.avg, threshold, fold, k+1))
             
     return result
 
@@ -91,15 +91,13 @@ if __name__ == '__main__':
     test_data = test_dataset(opt.test_path, opt.test_size, opt.rect)
     model = build_model(opt.modelname, opt.class_num, opt.arch)
     
-
-    if os.path.isdir(opt.weight[0]):
-        weightlist = []
-        for weight in sorted(os.listdir(opt.weight[0])):
-            if '.pth' in weight:
-                weightlist.append(os.path.join(opt.weight[0], weight))
+    weightlist = []
+    for weight in opt.weight if isinstance(opt.weight, list) else [opt.weight]:
+        for w in sorted(os.listdir(weight)):
+            if '.pth' in w:
+                weightlist.append(os.path.join(weight, w))
         opt.weight = weightlist
     
-    #print('Start to test weight: ', opt.weight)
     fold_result = None
     fold = len(opt.weight)
     for k, weight in enumerate(opt.weight):
