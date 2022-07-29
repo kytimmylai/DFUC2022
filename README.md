@@ -68,23 +68,23 @@ Weight of lawinloss:
 
 1. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and w/o TTA
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss --weight /path/to/the/fold/of/five/weight
 ```
 2. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and hflip in TTA
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/five/weight --tta h
+python test.py --rect --modelname lawinloss --weight /path/to/the/fold/of/five/weight --tta h
 ```
 3. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and hflip in TTA
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/five/weight --tta h 
+python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/five/weight --tta h 
 ```
 4. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vflip in TTA
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/five/weight --tta v
+python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/five/weight --tta v
 ```
 5. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vhflip in TTA
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/five/weight --tta vh
+python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/five/weight --tta vh
 ```
 
 
