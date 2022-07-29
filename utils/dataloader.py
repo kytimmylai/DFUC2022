@@ -1,21 +1,18 @@
 # albumentations
-import os
-from PIL import Image
+import torch
 import torch.utils.data as data
 import torchvision.transforms as transforms
-import numpy as np
 import random
-import torch
-import torchvision.transforms.functional as tf
-
-import albumentations as A
-
-from albumentations.pytorch import ToTensorV2
-import cv2
-
-from pathlib import Path
+import os
 import glob
+import cv2
+import numpy as np
+import albumentations as A
+from albumentations.pytorch import ToTensorV2
 from utils.utils import square_padding
+from pathlib import Path
+from PIL import Image
+
 
 
 # +
