@@ -42,7 +42,7 @@ Optional Args:
 python train.py --rect --augmentation --train_path /path/to/training/data
 
 Optional Args:
---rect         Padding image before resize to keep its aspect ratio
+--rect         Padding image to square before resize to keep its aspect ratio
 --augmentation Activating data audmentation during training
 --kfold        Specifying the number of K-Fold Cross-Validation
 --k            Training the specific fold of K-Fold Cross-Validation
