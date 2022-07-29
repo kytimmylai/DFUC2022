@@ -71,19 +71,19 @@ Weight of LawinLoss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friI
 ```
 python test.py --rect --modelname lawinloss --weight /path/to/the/fold/of/5weight/for/lawinloss
 ```
-2. **LawinLoss**(HarDNet-DFUS+deep1+boundary) with hflip in TTA
+2. **LawinLoss**(HarDNet-DFUS+deep1+boundary) with **hflip** in TTA
 ```
 python test.py --rect --modelname lawinloss --weight /path/to/the/fold/of/5weight/for/lawinloss --tta h
 ```
-3. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with hflip in TTA
+3. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with **hflip** in TTA
 ```
 python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta h 
 ```
-4. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with vflip in TTA
+4. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with **vflip** in TTA
 ```
 python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta v
 ```
-5. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with vhflip in TTA
+5. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with **vhflip** in TTA
 ```
 python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta vh
 ```
