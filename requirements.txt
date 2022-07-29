@@ -12,3 +12,4 @@ mmcv
 math
 matplotlib
 einops
+timm
