@@ -65,8 +65,8 @@ Please ensure there is no other weight in the folder to obtain the same result.
 Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and boundary loss, while **LawinLoss4** corresponds to the model of HarDNet-DFUS using deep1, deep2, and boundary loss.
 
 (All of our submissions used the 5-fold cross validation and ensemble)
-Weight of lawinloss: 
-Weight of lawinloss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing
+Weight of LawinLoss: ???????????????????????????????????????????????????????????????????
+Weight of LawinLoss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing
 
 1. **LawinLoss**(HarDNet-DFUS+deep1+boundary)
 ```
