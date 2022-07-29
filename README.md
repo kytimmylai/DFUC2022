@@ -62,9 +62,8 @@ python train.py --rect --augmentation --train_path /path/to/training/data --kfol
 Download the weights and place in the same folder, specifying the folder in --weight when testing.
 Please ensure there is no other weight in the folder to obtain the same result.
 
-Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and boundary loss, while **LawinLoss4** corresponds to the model of HarDNet-DFUS using deep1, deep2, and boundary loss.
+Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and boundary loss, while **LawinLoss4** corresponds to the model of HarDNet-DFUS using deep1, deep2, and boundary loss. 
 
-(All of our submissions used the 5-fold cross validation and ensemble)
 Weight of LawinLoss: ???????????????????????????????????????????????????????????????????
 Weight of LawinLoss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing
 
