@@ -67,18 +67,9 @@ class create_dataset(data.Dataset):
                 #print(p)
                 p = Path(p)
                 f += glob.glob(str(p / '**' / '*.*'), recursive=True)
-            
-            '''
-            self.images = sorted([x for x in f if 'image' in x])
-            self.gts = sorted([x for x in f if 'mask' in x])
-            '''
-            image_root = data_path + "images/"
-            gt_root = data_path + "masks/"
-            
-            self.images = [image_root + f for f in os.listdir(image_root) if f.endswith('.jpg') or f.endswith('.png')]
-            self.gts = [gt_root + f for f in os.listdir(gt_root) if f.endswith('.jpg') or f.endswith('.png')]
-            self.images = sorted(self.images)
-            self.gts = sorted(self.gts)
+                
+            self.images = sorted([x for x in f if ('images' in x) and (x.endswith('.jpg') or f.endswith('.png'))])
+            self.gts = sorted([x for x in f if ('masks' in x) and (x.endswith('.jpg') or f.endswith('.png'))])
             length = len(self.images)
             #mean, std = calculatemns(self.images, self.trainsize, self.rect)
             #print('mean:', mean, ' std:', std)
