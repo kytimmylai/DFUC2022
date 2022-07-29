@@ -66,24 +66,26 @@ Weight of lawinloss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friI
 
 Weight of lawinloss: 
 
-1. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vhflip in TTA
-```
-python test.py --rect --modelname lawinloss4 --tta vh --weight /path/to/five/weight
-```
-2. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vflip in TTA
-```
-python test.py --rect --modelname lawinloss4 --tta v --weight /path/to/five/weight
-```
-3. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and hflip in TTA
-```
-python test.py --rect --modelname lawinloss4 --tta h --weight /path/to/five/weight
-```
-4. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and w/o TTA
+1. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and w/o TTA
 ```
 python test.py --rect --modelname lawinloss --weight /path/to/five/weight
 ```
-5. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and hflip in TTA
+2. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and hflip in TTA
 ```
-python test.py --rect --modelname lawinloss --tta h --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss --weight /path/to/five/weight --tta h
 ```
+3. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and hflip in TTA
+```
+python test.py --rect --modelname lawinloss4 --weight /path/to/five/weight --tta h 
+```
+4. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vflip in TTA
+```
+python test.py --rect --modelname lawinloss4 --weight /path/to/five/weight --tta v
+```
+5. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vhflip in TTA
+```
+python test.py --rect --modelname lawinloss4 --weight /path/to/five/weight --tta vh
+```
+
+
 
