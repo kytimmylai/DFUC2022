@@ -15,8 +15,6 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 
 ## Installation
 
-
-
 ```
 conda create -n dfuc python=3.6
 conda activate dfuc
@@ -87,6 +85,3 @@ python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weig
 ```
 python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta vh
 ```
-
-
-
