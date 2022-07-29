@@ -15,9 +15,7 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 
 ## Installation
 
-The related weights are available at https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing
 
-Download weights and place in the folder ``` /weights ``` 
 
 ```
 conda create -n dfuc python=3.6
@@ -37,6 +35,9 @@ Optional Args:
 ```
 
 ## Training
+The related weights are available at https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing
+
+Download weights and place in the folder ``` /weights ``` 
 
 ```
 python train.py --rect --augmentation --train_path /path/to/training/data
@@ -53,10 +54,18 @@ Optional Args:
 Train w/ 5-fold
 
 ```
-python train.py --rect --modelname lawin --augmentation --train_path /path/to/training/data --kfold 5
+python train.py --rect --augmentation --train_path /path/to/training/data --kfold 5
 ```
 
 ## Our 5 Submission in test phase
+
+Download the weights and place in the same folder, specifying the folder in --weight when testing.
+Please ensure there is no other weight in the folder to obtain the same result.
+
+Weight of lawinloss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing
+
+Weight of lawinloss: 
+
 1. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vhflip in TTA
 ```
 python test.py --rect --modelname lawinloss4 --tta vh --weight /path/to/five/weight
