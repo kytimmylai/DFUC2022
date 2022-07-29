@@ -67,10 +67,11 @@ class create_dataset(data.Dataset):
                 #print(p)
                 p = Path(p)
                 f += glob.glob(str(p / '**' / '*.*'), recursive=True)
-                
-            self.images = sorted([x for x in f if ('images' in x) and (x.endswith('.jpg') or f.endswith('.png'))])
-            self.gts = sorted([x for x in f if ('masks' in x) and (x.endswith('.jpg') or f.endswith('.png'))])
+
+            self.images = sorted([x for x in f if ('images' in x) and (x.endswith('.jpg') or x.endswith('.png'))])
+            self.gts = sorted([x for x in f if ('masks' in x) and (x.endswith('.jpg') or x.endswith('.png'))])
             length = len(self.images)
+            
             #mean, std = calculatemns(self.images, self.trainsize, self.rect)
             #print('mean:', mean, ' std:', std)
             train_idx, val_idx = split_data(length, self.ratio, k=k, seed=seed, k_fold=k_fold)
