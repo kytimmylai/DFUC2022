@@ -4,7 +4,7 @@ import os
 import numpy as np
 from PIL import Image
 import torchvision.transforms as transforms
-from lib.HarDMSEG import KingMSEG, KingMSEG_lawin_loss4, CSPKingMSEG
+from lib.HarDMSEG import KingMSEG_lawin_loss, KingMSEG_lawin_loss4
 
 # +
 def square_padding(image, w, h):
@@ -60,7 +60,10 @@ class AvgMeter(object):
 # +
 def build_model(modelname='base', class_num=1, arch=53):
     print('model:', modelname)
-    model = KingMSEG_lawin_loss4(class_num=class_num).cuda()
+    if modelname == 'lawinloss':
+        model = KingMSEG_lawin_loss(class_num=class_num).cuda()
+    elif modelname == 'lawinloss4':
+        model = KingMSEG_lawin_loss4(class_num=class_num).cuda()
 
     return model
 

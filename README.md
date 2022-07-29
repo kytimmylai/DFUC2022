@@ -59,22 +59,22 @@ python train.py --rect --modelname lawin --augmentation --train_path /path/to/tr
 ## Our 5 Submission in test phase
 1. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vhflip in TTA
 ```
-python test.py --rect --tta vh --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss4 --tta vh --weight /path/to/five/weight
 ```
 2. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and vflip in TTA
 ```
-python test.py --rect --tta v --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss4 --tta v --weight /path/to/five/weight
 ```
 3. HarDNet-DFUS & deep1+deep2+boundary loss -- with 5-fold ensemble and hflip in TTA
 ```
-python test.py --rect --tta h --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss4 --tta h --weight /path/to/five/weight
 ```
 4. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and w/o TTA
 ```
-python test.py --rect --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss --weight /path/to/five/weight
 ```
 5. HarDNet-DFUS & deep1+boundary loss -- with 5-fold ensemble and hflip in TTA
 ```
-python test.py --rect --tta h --weight /path/to/five/weight
+python test.py --rect --modelname lawinloss --tta h --weight /path/to/five/weight
 ```
 

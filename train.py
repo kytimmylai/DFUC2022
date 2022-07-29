@@ -42,7 +42,7 @@ def arg_parser():
     parser.add_argument('--name', type=str, default='exp', help='exp name to annotate this training')
     
     parser.add_argument('--optimizer', type=str, default='AdamW', help='choose optimizer')
-    parser.add_argument('--modelname', type=str, default='lawin', help='choose model')
+    parser.add_argument('--modelname', type=str, default='lawinloss4', help='choose model')
     parser.add_argument('--decoder', type=str, default='lawin', help='choose decoder')
     
     parser.add_argument('--augmentation', action='store_true', help='activate data augmentation')
