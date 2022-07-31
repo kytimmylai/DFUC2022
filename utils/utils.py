@@ -113,6 +113,16 @@ class confusion_matrix():
             
 def save_mask(output, save_path, name, threshold):
     mask = ((output > threshold)*255).astype(np.uint8)
+    
+    # fill the holes
+    th, im_th = cv2.threshold(mask, 220, 255, cv2.THRESH_BINARY)
+    im_floodfill = im_th.copy()
+    h, w = im_th.shape[:2]
+    mask = np.zeros((h+2, w+2), np.uint8)
+    cv2.floodFill(im_floodfill, mask, (0,0), 255)
+    im_floodfill_inv = cv2.bitwise_not(im_floodfill)
+    mask = im_th | im_floodfill_inv
+    
     mask = Image.fromarray(mask)
     mask.save(os.path.join(save_path, name))
 
