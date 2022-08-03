@@ -1,6 +1,13 @@
 # Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
 Contains the prediction codes for our submission to the **Diabetic Foot Ulcer Segmentation Challenge 2022 (DFUC2022)** at **MICCAI2022**.
 
+## HarDNet Family
+#### For Image Classification : [HarDNet](https://github.com/PingoLH/Pytorch-HarDNet) A Low Memory Traffic Network
+#### For Object Detection : [CenterNet-HarDNet](https://github.com/PingoLH/CenterNet-HarDNet) 44.3 mAP / 45 FPS on COCO Dataset
+#### For Semantic Segmentation : [FC-HarDNet](https://github.com/PingoLH/FCHarDNet)  76.0 mIoU / 53 FPS on Cityscapes Dataset
+#### For Polyp Segmentation : [HarDNet-MSEG](https://github.com/james128333/HarDNet-MSEG) 0.904 mDice / 86.7 FPS on Kvasir-SEG
+
+## Main Results
 <p align="center">
 <img src="EnhancedVersion.png" width=100% height=100% 
 class="center">
@@ -12,6 +19,8 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 | :---: |  :---:  | 
 | HarDNet-MSEG  | 65.53  | 
 | **Enhanced version**  |  **70.63**  | 
+
+
 
 ## Installation
 
@@ -67,21 +76,21 @@ Weight of LawinLoss4: https://drive.google.com/drive/folders/15hhsl1CIvOqa60friI
 
 1. **LawinLoss**(HarDNet-DFUS+deep1+boundary)
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/the/fold/of/5weight/for/lawinloss
+python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --test_path /path/to/testing/data
 ```
 2. **LawinLoss**(HarDNet-DFUS+deep1+boundary) with **hflip** in TTA
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/the/fold/of/5weight/for/lawinloss --tta h
+python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --test_path /path/to/testing/data --tta h
 ```
 3. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with **hflip** in TTA
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta h 
+python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --test_path /path/to/testing/data --tta h 
 ```
 4. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with **vflip** in TTA
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta v
+python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --test_path /path/to/testing/data --tta v
 ```
 5. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with **vhflip** in TTA
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/the/fold/of/5weight/for/lawinloss4 --tta vh
+python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --test_path /path/to/testing/data --tta vh
 ```
