@@ -1,11 +1,14 @@
 # Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
-Contains the prediction codes for our submission to the **Diabetic Foot Ulcer Segmentation Challenge 2022 (DFUC2022)** at **MICCAI2022**.
+
+## 1st Place in Test Phase of DFUC 2022!
+Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes for our submission to the **Diabetic Foot Ulcer Segmentation Challenge 2022 (DFUC2022)** at **MICCAI2022**.
 
 ## HarDNet Family
-#### For Image Classification : [HarDNet](https://github.com/PingoLH/Pytorch-HarDNet) A Low Memory Traffic Network
-#### For Object Detection : [CenterNet-HarDNet](https://github.com/PingoLH/CenterNet-HarDNet) 44.3 mAP / 45 FPS on COCO Dataset
-#### For Semantic Segmentation : [FC-HarDNet](https://github.com/PingoLH/FCHarDNet)  76.0 mIoU / 53 FPS on Cityscapes Dataset
-#### For Polyp Segmentation : [HarDNet-MSEG](https://github.com/james128333/HarDNet-MSEG) 0.904 mDice / 86.7 FPS on Kvasir-SEG
+*inference on V100*
+#### For Image Classification : [HarDNet](https://github.com/PingoLH/Pytorch-HarDNet) 78.0 top-1 acc. / 1029.76 Throughput on ImageNet-1K @224x224
+#### For Object Detection : [CenterNet-HarDNet](https://github.com/PingoLH/CenterNet-HarDNet) 44.3 mAP / 60 FPS on COCO val @512x512
+#### For Semantic Segmentation : [FC-HarDNet](https://github.com/PingoLH/FCHarDNet)  75.9% mIoU / 68 FPS on Cityscapes test @1024x2048(w/o fuse, transform)
+#### For Polyp Segmentation : [HarDNet-MSEG](https://github.com/james128333/HarDNet-MSEG) 90.4% mDice / 119 FPS on Kvasir-SEG @352x352
 
 ## Main Results
 <p align="center">
@@ -15,10 +18,10 @@ class="center">
 
 We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 
-| Method | DFUC mDice |
-| :---: |  :---:  | 
-| HarDNet-MSEG  | 65.53  | 
-| **Enhanced version**  |  **70.63**  | 
+| Method | DFUC val <br>  mDice| DFUC test <br>  mDice|
+| :---: | :---: | :---: | 
+| HarDNet-MSEG  | 65.53 | n/a |
+| **Enhanced version**  |  **70.63**  | **72.87** |
 
 
 
