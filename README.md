@@ -26,10 +26,10 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 | HarDNet-MSEG  | 65.53 | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **72.87** |
 
-#### Sample Inference and Visualized Results of FUC Dataset
+### Sample Inference and Visualized Results of FUC Dataset
 
 <p align="center">
-<img src="EnhancedVersion.png" width=100% height=100% 
+<img src="inf.png" width=100% height=100% 
 class="center">
 </p>
 
