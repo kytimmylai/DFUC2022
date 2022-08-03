@@ -15,7 +15,7 @@ Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes f
 
 ## Main Results
 <p align="center">
-<img src="EnhancedVersion.png" width=100% height=100% 
+<img src="EnhancedVersion.png" width=190% height=100% 
 class="center">
 </p>
 
@@ -29,7 +29,7 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 ### Sample Inference and Visualized Results of FUC Dataset
 
 <p align="center">
-<img src="inf.png" width=100% height=100% 
+<img src="inf.png" width=90% height=90% 
 class="center">
 </p>
 
