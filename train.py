@@ -182,7 +182,7 @@ if __name__ == '__main__':
         test_loader = data.DataLoader(dataset=test_dataset, batch_size=1, shuffle=True, num_workers=4, pin_memory=True)
         del test_dataset
         
-        model = build_model(opt.modelname, opt.class_num, opt.arch)
+        model = build_model() #opt.modelname, opt.class_num, opt.arch)
         logging.info(model)
             
         optimizer = set_optimizer(model, opt.optimizer, opt.lr)
