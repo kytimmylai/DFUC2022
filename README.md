@@ -96,6 +96,14 @@ Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and
 
 [Weights for LawinLoss4](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing)
 
+| Submission | DFUC test <br>  mDice|
+| :---: | :---: |
+| test1  |  72.37 |
+| test2  |  72.43 |
+| test3  |  72.73 |
+| test4  |  72.75 |
+| test5  |  **72.87**  |
+
 1. **LawinLoss**(HarDNet-DFUS+deep1+boundary)
 ```
 python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --test_path /path/to/testing/data
