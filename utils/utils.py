@@ -58,7 +58,7 @@ class AvgMeter(object):
 
 
 # +
-def build_model(modelname='base', class_num=1, arch=53):
+def build_model(modelname='lawinloss4', class_num=1, arch=53):
     print('model:', modelname)
     if modelname == 'lawinloss':
         model = KingMSEG_lawin_loss(class_num=class_num).cuda()
