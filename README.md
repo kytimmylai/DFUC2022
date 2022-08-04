@@ -1,7 +1,7 @@
 # Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
 
 
-## 1st Place in Test Phase of DFUC 2022!
+## 1st Place in Testing Stage of DFUC 2022!
 Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes for our submission to the **Diabetic Foot Ulcer Segmentation Challenge 2022 (DFUC2022)** at **MICCAI2022**.
 
 
@@ -17,7 +17,7 @@ Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes f
 ### Performance on DFUC2022 Challenge Dataset
 We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 
-| Method | DFUC Val Stage <br> mDice | DFUC Val Stage <br> mIoU | DFUC Test Stage <br> mDice | DFUC Test Stage <br>  mIoU |
+| Method | DFUC Val. Stage <br> mDice | DFUC Val. Stage <br> mIoU | DFUC Testing Stage <br> mDice | DFUC Testing Stage <br>  mIoU |
 | :---: | :---: | :---: | :---: | :---: |
 | HarDNet-MSEG  | 65.53 | 55.22 | n/a | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
@@ -85,7 +85,7 @@ Optional Args:
 --weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
 ```
 
-## Reproduce our Submissions in DFUC 2022 Challenge Testing Phase 
+## Reproduce our Submissions in DFUC 2022 Challenge Testing Stage 
 
 Download the weights and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)
 
@@ -95,7 +95,7 @@ Download the weights and place them in the same folder, specifying the folder in
 
 - Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and boundary loss, while **LawinLoss4** corresponds to the model of HarDNet-DFUS using deep1, deep2, and boundary loss. 
 
-    | Method | DFUC Test Stage <br> mDice|
+    | Method | DFUC Testing Stage <br> mDice|
     | :---: | :---: |
     | LawinLoss  |  72.37 |
     | LawinLoss with TTA hflip |  72.43 |
