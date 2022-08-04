@@ -23,7 +23,7 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 
 | Method | DFUC val <br> mDice | DFUC val <br> mIoU | DFUC test <br> mDice | DFUC test <br>  mIoU |
 | :---: | :---: | :---: | :---: | :---: |
-| HarDNet-MSEG  | 65.53 | n/a | n/a | n/a |
+| HarDNet-MSEG  | 65.53 | 55.22 | n/a | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
 
 ### Sample Inference and Visualized Results of [FUSeg Challenge Dataset](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
