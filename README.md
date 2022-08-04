@@ -21,10 +21,10 @@ class="center">
 
 We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 
-| Method | DFUC val <br>  mDice| DFUC test <br>  mDice|
-| :---: | :---: | :---: | 
-| HarDNet-MSEG  | 65.53 | n/a |
-| **HarDNet-DFUS**  |  **70.63**  | **72.87** |
+| Method | DFUC val <br> mDice | DFUC val <br> mIoU | DFUC test <br> mDice | DFUC test <br>  mIoU |
+| :---: | :---: | :---: | :---: | :---: |
+| HarDNet-MSEG  | 65.53 | n/a | n/a | n/a |
+| **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
 
 ### Sample Inference and Visualized Results of [FUSeg Challenge Dataset](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
 
@@ -96,13 +96,13 @@ Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and
 
 [Weights for LawinLoss4](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing)
 
-| Method | DFUC test <br>  mDice|
-| :---: | :---: |
-| LawinLoss  |  72.37 |
-| LawinLoss with TTA hflip |  72.43 |
-| LawinLoss4 with TTA hflip  |  72.73 |
-| LawinLoss4 with TTA vflip  |  72.75 |
-| **LawinLoss4 with TTA vhflip**  |  **72.87**  |
+| Method | DFUC test <br> mDice| DFUC test <br> mIoU|
+| :---: | :---: | :---: |
+| LawinLoss  |  72.37 | 61.94 |
+| LawinLoss with TTA hflip | 72.43 | 62.04 |
+| LawinLoss4 with TTA hflip  | 72.73 | 62.39 |
+| LawinLoss4 with TTA vflip  | 72.75 | 62.40 |
+| **LawinLoss4 with TTA vhflip**  | **72.87** | **62.52** |
 
 1. **LawinLoss**(HarDNet-DFUS+deep1+boundary)
 ```
