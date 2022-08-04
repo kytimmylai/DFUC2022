@@ -17,6 +17,12 @@ from PIL import Image
 
 # +
 def calculatemns(img_list, size, rect):
+    ''' Calculate mean and std. of images
+    Args:
+        img_list: list of image name
+        size: target size in training
+        rect: padding to rect or not
+    '''
     mean = 0.
     std = 0.
     for name in img_list:
@@ -36,6 +42,14 @@ def calculatemns(img_list, size, rect):
 
 
 def split_data(length, ratio, k=0, seed=7414, k_fold=1):
+    ''' Randomly choose the index of training/dalidation data
+    Args:
+        length: length of collected data
+        ratio: ratio of data for training, not worked if trained w/ k-fold
+        k: # fold in k-fold
+        seed: seed for reproducing the random result
+        k_fold: # fold for cross-validation
+    '''
     random.seed(seed)
     val_idx = random.sample(range(length), k=length)
     if k_fold == 1:
@@ -50,18 +64,30 @@ def split_data(length, ratio, k=0, seed=7414, k_fold=1):
 # -
 
 class create_dataset(data.Dataset):
-    """
-    dataloader for polyp segmentation tasks
-    """
+    ''' collect all files in data_path and determine augmentation
+    Args:
+        data_path: the path that contains images and masks.
+        trainsize: resize all images to trainsize for training
+        augmentation: enable data augmentation or not
+        train: determine the dataset is for training or validation
+        train_ratio: ratio of data for training
+        rect: padding image to square before resize to keep its aspect ratio
+        k: # fold in k-fold
+        k_fold: # fold for cross-validation
+        seed: seed for reproducing the random result
+    '''
     def __init__(self, data_path, trainsize, augmentations, train=True, train_ratio=0.8, rect=False, k=0, k_fold=1, seed=None):
         self.trainsize = trainsize
         self.augmentations = augmentations
         self.ratio = train_ratio
         self.rect = rect
         try:
+            '''
+            We assert that your folder of images/masks is named by "images"/"masks"
+            and their type are .jpg or .png
+            '''
             f = []
             for p in data_path if isinstance(data_path, list) else [data_path]:
-                #print(p)
                 p = Path(p)
                 f += glob.glob(str(p / '**' / '*.*'), recursive=True)
 
@@ -167,6 +193,12 @@ class create_dataset(data.Dataset):
 
 
 class test_dataset(data.Dataset):
+    ''' collect all files in data_path and determine augmentation
+    Args:
+        data_path: the path that contains images and masks.
+        size: resize all images to trainsize for training
+        rect: padding image to square before resize to keep its aspect ratio
+    '''
     def __init__(self, data_path, size, rect):
         self.trainsize = size
         try:
@@ -181,8 +213,8 @@ class test_dataset(data.Dataset):
             raise Exception('Error loading data from %s: %s\n' % (data_path, e))
 
         print('load %g all images'%length, 'from', data_path)
-        mean, std = calculatemns(self.images, self.trainsize, rect)
-        print('mean:', mean, ' std:', std)
+        #mean, std = calculatemns(self.images, self.trainsize, rect)
+        #print('mean:', mean, ' std:', std)
         
         self.rect = rect
         self.size = len(self.images)

@@ -8,7 +8,10 @@ from lib.HarDMSEG import KingMSEG_lawin_loss, KingMSEG_lawin_loss4
 
 # +
 def square_padding(image, w, h):
-    '''
+    ''' padding an image to square, if width is larger
+    then pad half of their difference
+    +1//2 to avoid odd difference
+
     PIL/Tensor -> PIL/Tensor
     '''
     dif = w - h
@@ -21,7 +24,9 @@ def square_padding(image, w, h):
     return image
 
 def square_unpadding(image, w, h):
-    '''
+    ''' crop origin part of padded image
+    +1//2 to avoid odd difference
+
     PIL/Tensor -> PIL/Tensor
     '''
     dif = w - h
@@ -51,13 +56,11 @@ class AvgMeter(object):
         self.sum += val * n
         self.count += n
         self.avg = self.sum / self.count
-        #self.losses.append(val)
 
     def show(self):
         return torch.mean(torch.stack(self.losses[np.maximum(len(self.losses)-self.num, 0):]))
 
 
-# +
 def build_model(modelname='lawinloss4', class_num=1, arch=53):
     print('model:', modelname)
     if modelname == 'lawinloss':
@@ -113,7 +116,6 @@ class confusion_matrix():
             
 def save_mask(output, save_path, name, threshold):
     mask = ((output > threshold)*255).astype(np.uint8)
-    
     # fill the holes
     th, im_th = cv2.threshold(mask, 220, 255, cv2.THRESH_BINARY)
     im_floodfill = im_th.copy()
