@@ -17,7 +17,7 @@ Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes f
 ### Performance on DFUC2022 Challenge Dataset
 We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 
-| Method | Validation Stage <br> mDice | Validation Stage <br> mIoU | Testing Stage <br> mDice | Testing Stage <br>  mIoU |
+| Method | DFUC Validation Stage <br> mDice | DFUC Validation Stage <br> mIoU | DFUC Testing Stage <br> mDice | DFUC Testing Stage <br>  mIoU |
 | :---: | :---: | :---: | :---: | :---: |
 | HarDNet-MSEG  | 65.53 | 55.22 | n/a | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
