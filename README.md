@@ -125,9 +125,5 @@ python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight
 ```
 
 ## Acknowledgement
-- A large part of the code is borrowed from       
-**HarDNet-MSEG** (https://github.com/james128333/HarDNet-MSEG)(https://arxiv.org/abs/2101.07172)    
-Thanks for their wonderful works.  
-
 - This research is supported in part by a grant from the **Ministry of Science and Technology (MOST) of Taiwan**.   
 We thank **National Center for High-performance Computing (NCHC)** for providing computational and storage resources.        
