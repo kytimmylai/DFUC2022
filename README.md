@@ -26,7 +26,7 @@ We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder
 | HarDNet-MSEG  | 65.53 | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **72.87** |
 
-### Sample Inference and Visualized Results of FUC Dataset
+### Sample Inference and Visualized Results of [FUSeg Challenge Dataset](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
 
 <p align="center">
 <img src="inf.png" width=90% height=90% 
