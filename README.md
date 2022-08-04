@@ -17,7 +17,7 @@ Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes f
 ### Performance on DFUC2022 Challenge Dataset
 We propose an accuracy-oriented HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 
-| Method | Validation stage <br> mDice | Validation stage <br> mIoU | Testing phase <br> mDice | Testing phase <br>  mIoU |
+| Method | Validation Stage <br> mDice | Validation Stage <br> mIoU | Testing Stage <br> mDice | Testing Stage <br>  mIoU |
 | :---: | :---: | :---: | :---: | :---: |
 | HarDNet-MSEG  | 65.53 | 55.22 | n/a | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
@@ -95,7 +95,7 @@ Download the weights and place them in the same folder, specifying the folder in
 
 - Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and boundary loss, while **LawinLoss4** corresponds to the model of HarDNet-DFUS using deep1, deep2, and boundary loss. 
 
-    | Method | DFUC testing phase <br> mDice|
+    | Method | DFUC Testing Stage <br> mDice|
     | :---: | :---: |
     | LawinLoss  |  72.37 |
     | LawinLoss with TTA hflip |  72.43 |
