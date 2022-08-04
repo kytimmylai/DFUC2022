@@ -26,7 +26,7 @@ def arg_parser():
     parser = argparse.ArgumentParser()
     # for training
     parser.add_argument('--epoch', type=int, default=150, help='# epoch')
-    parser.add_argument('--batchsize', type=int, default=4, help='batch size')
+    parser.add_argument('--batchsize', type=int, default=6, help='batch size')
     parser.add_argument('--kfold', type=int, default=1, help='# fold')
     parser.add_argument('--k', type=int, default=-1, help='specific # fold')
     parser.add_argument('--seed', type=int, help='random seed for split data')
