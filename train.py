@@ -46,7 +46,7 @@ def arg_parser():
     
     parser.add_argument('--augmentation', action='store_true', help='activate data augmentation')
     parser.add_argument('--rect', action='store_true', help='padding the image into rectangle')
-    parser.add_argument('--test', action='store_true', help='run test')
+    parser.add_argument('--eval', action='store_true', help='run test')
     return parser.parse_args()
 
 def trainingplot(rec, name):
@@ -196,7 +196,7 @@ if __name__ == '__main__':
         if opt.weight != '':
             model.load_state_dict(torch.load(opt.weight))#, map_location=device))
         
-        if opt.test:
+        if opt.eval:
             dice = test(model, criterion, test_loader, epoch, opt.tta)
             print("Mean dice = ", dice)
 
