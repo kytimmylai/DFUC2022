@@ -44,44 +44,47 @@ conda activate dfuc
 pip install -r requirements.txt
 ```
 
-### Training/Testing
-- Training :
-    1. Download [weights](https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing) and place in the folder ``` /weights ``` 
-    2. Run:
-        ```
-        python train.py --rect --augmentation --train_path /path/to/training/data
+### Training
 
-        Optional Args:
-        --rect         Padding image to square before resize to keep its aspect ratio
-        --augmentation Activating data audmentation during training
-        --kfold        Specifying the number of K-Fold Cross-Validation
-        --k            Training the specific fold of K-Fold Cross-Validation
-        --dataratio    Specifying the ratio of data for training
-        --seed         Reproducing the result of data spliting in dataloader
-        --train_path   Path to training data
-        ```
-
-- Testing
-
-    Run:
+1. Download [weights](https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing) and place in the folder ``` /weights ``` 
+2. Run:
     ```
-    python test.py --rect --weight path/to/weight/or/folder --test_path path/to/testing/data
+    python train.py --rect --augmentation --data_path /path/to/training/data
 
     Optional Args:
     --rect         Padding image to square before resize to keep its aspect ratio
-    --tta          Test time augmentation, 'v/h/vh' for verti/horiz/verti&horiz flip
-    --weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
-    --test_path    Path to testing data
+    --augmentation Activating data audmentation during training
+    --kfold        Specifying the number of K-Fold Cross-Validation
+    --k            Training the specific fold of K-Fold Cross-Validation
+    --dataratio    Specifying the ratio of data for training
+    --seed         Reproducing the result of data spliting in dataloader
+    --data_path    Path to training data
     ```
+
+### Testing
+
+Run:
+```
+python test.py --rect --weight path/to/weight/or/folder --data_path path/to/testing/data
+
+Optional Args:
+--rect         Padding image to square before resize to keep its aspect ratio
+--tta          Test time augmentation, 'v/h/vh' for verti/horiz/verti&horiz flip
+--weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
+--data_path    Path to testing data
+```
+
+
 
 ### Evaluation :
 Run:
 ```
-python train.py --eval
+python train.py --eval --rect --weight path/to/weight/or/folder --data_path path/to/testing/data
 
 Optional Args:
 --rect         Padding image to square before resize to keep its aspect ratio
 --weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
+--data_path    Path to evaluated data
 ```
 
 ## Reproduce our Submissions in DFUC 2022 Challenge Testing Stage 
