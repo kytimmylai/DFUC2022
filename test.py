@@ -23,7 +23,7 @@ def arg_parser():
     parser.add_argument('--modelname', type=str, default='lawinloss4', help='choose model')
     parser.add_argument('--tta', type=str, default='', help='testing time augmentation')
     parser.add_argument('--save_path', type=str, default='pred_mask', help='path to save mask')
-    parser.add_argument('--test_path', nargs='+', type=str, default='../DFUC2022_val' , help='path to testing data')
+    parser.add_argument('--data_path', nargs='+', type=str, default='../DFUC2022_val' , help='path to testing data')
     
     parser.add_argument('--rect', action='store_true', help='padding the image into rectangle')
     parser.add_argument('--visualize', action='store_true', help='visualize the ground truth and prediction on original image')
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     if opt.visualize:
         os.makedirs(os.path.join(opt.save_path, 'vis'), exist_ok=True)
     
-    test_data = test_dataset(opt.test_path, opt.test_size, opt.rect)
+    test_data = test_dataset(opt.data_path, opt.test_size, opt.rect)
     model = build_model(opt.modelname, opt.class_num, opt.arch)
     
     weightlist = []
