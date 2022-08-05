@@ -1,7 +1,7 @@
 # HarDNet-DFUS: Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
 
 
-## 1st Place in Testing Stage of DFUC 2022!
+## 1st Place Winner in MICCAI DFUC 2022!
 Official PyTorch implementation of HarDNet-DFUS, contains the prediction codes for our submission to the **Diabetic Foot Ulcer Segmentation Challenge 2022 (DFUC2022)** at **MICCAI2022**.
 
 
