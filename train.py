@@ -199,7 +199,7 @@ if __name__ == '__main__':
             model.load_state_dict(torch.load(opt.weight))#, map_location=device))
         
         if opt.eval:
-            dice = test(model, criterion, test_loader)
+            dice, val_loss = test(model, criterion, test_loader)
             print("Mean dice = ", dice)
 
         else:
