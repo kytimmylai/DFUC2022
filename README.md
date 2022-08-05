@@ -81,7 +81,6 @@ python train.py --eval
 
 Optional Args:
 --rect         Padding image to square before resize to keep its aspect ratio
---tta          Test time augmentation, 'v/h/vh' for verti/horiz/verti&horiz flip
 --weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
 ```
 
