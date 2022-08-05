@@ -1,4 +1,4 @@
-# Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
+# HarDNet-DFUS: Enhancing Backbone and Decoder of HarDNet-MSEG for Diabetic Foot Ulcer Segmentation
 
 
 ## 1st Place in Testing Stage of DFUC 2022!
