@@ -107,23 +107,23 @@ Download the weights and place them in the same folder, specifying the folder in
 
 1. **LawinLoss**(HarDNet-DFUS+deep1+boundary)
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --test_path /path/to/testing/data
+python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --data_path /path/to/testing/data
 ```
 2. **LawinLoss**(HarDNet-DFUS+deep1+boundary) with TTA **hflip**
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --test_path /path/to/testing/data --tta h
+python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --data_path /path/to/testing/data --tta h
 ```
 3. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with TTA **hflip**
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --test_path /path/to/testing/data --tta h 
+python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --data_path /path/to/testing/data --tta h 
 ```
 4. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with TTA **vflip**
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --test_path /path/to/testing/data --tta v
+python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --data_path /path/to/testing/data --tta v
 ```
 5. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with TTA **vhflip**
 ```
-python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --test_path /path/to/testing/data --tta vh
+python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --data_path /path/to/testing/data --tta vh
 ```
 
 ## Acknowledgement
