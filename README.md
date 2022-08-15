@@ -91,7 +91,7 @@ Download the weights and place them in the same folder, specifying the folder in
 
 [Weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing)
 
-### **HarDNet-DFUS** with TTA **vhflip**
+### **HarDNet-DFUS** with **5-fold cross validation** and **TTA vhflip**
 ```
 python test.py --rect --modelname lawinloss4 --weight /path/to/HarDNet-DFUS_weight/folder --data_path /path/to/testing/data --tta vh
 ```
