@@ -85,11 +85,9 @@ Optional Args:
 --data_path    Path to evaluated data
 ```
 
-## Reproduce our best prediction in DFUC 2022 Challenge Testing Stage 
+## Reproduce our best submission in DFUC 2022 Challenge Testing Stage 
 
-Download the weights and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)
-
-[Weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing)
+Download [the weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)
 
 ### **HarDNet-DFUS** with **5-fold cross validation** and **TTA vhflip**
 ```
