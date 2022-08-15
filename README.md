@@ -74,8 +74,6 @@ Optional Args:
 --data_path    Path to testing data
 ```
 
-
-
 ### Evaluation :
 Run:
 ```
@@ -87,43 +85,15 @@ Optional Args:
 --data_path    Path to evaluated data
 ```
 
-## Reproduce our Submissions in DFUC 2022 Challenge Testing Stage 
+## Reproduce our best prediction in DFUC 2022 Challenge Testing Stage 
 
 Download the weights and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)
 
-[Weights for LawinLoss](https://drive.google.com/drive/folders/1f7tCvP6Mj4ZFZJPvRcvvspdwvWljkrK0?usp=sharing) 
+[Weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing)
 
-[Weights for LawinLoss4](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing)
-
-- Note that **LawinLoss** corresponds to the model of HarDNet-DFUS using deep1 and boundary loss, while **LawinLoss4** corresponds to the model of HarDNet-DFUS using deep1, deep2, and boundary loss. 
-
-    | Method | DFUC Testing Stage <br> mDice|
-    | :---: | :---: |
-    | LawinLoss  |  72.37 |
-    | LawinLoss with TTA hflip |  72.43 |
-    | LawinLoss4 with TTA hflip  |  72.73 |
-    | LawinLoss4 with TTA vflip  |  72.75 |
-    | **LawinLoss4 with TTA vhflip**  |  **72.87**  |
-
-1. **LawinLoss**(HarDNet-DFUS+deep1+boundary)
+### **HarDNet-DFUS** with TTA **vhflip**
 ```
-python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --data_path /path/to/testing/data
-```
-2. **LawinLoss**(HarDNet-DFUS+deep1+boundary) with TTA **hflip**
-```
-python test.py --rect --modelname lawinloss --weight /path/to/lawinloss_weight/folder --data_path /path/to/testing/data --tta h
-```
-3. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with TTA **hflip**
-```
-python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --data_path /path/to/testing/data --tta h 
-```
-4. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with TTA **vflip**
-```
-python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --data_path /path/to/testing/data --tta v
-```
-5. **LawinLoss4**(HarDNet-DFUS+deep1+deep2+boundary) with TTA **vhflip**
-```
-python test.py --rect --modelname lawinloss4 --weight /path/to/lawinloss4_weight/folder --data_path /path/to/testing/data --tta vh
+python test.py --rect --modelname lawinloss4 --weight /path/to/HarDNet-DFUS_weight/folder --data_path /path/to/testing/data --tta vh
 ```
 
 ## Acknowledgement
