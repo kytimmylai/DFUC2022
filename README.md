@@ -86,13 +86,13 @@ Optional Args:
 --data_path    Path to evaluated data
 ```
 
-## Reproduce our best submission in DFUC 2022 Challenge Testing Stage 
+## HarDNet-DFUS with 5-fold cross validation and TTA vhflip: our best submission in DFUC 2022 Challenge Testing Stage 
 
-1. Download [the weights for HarDNet-DFUS with 5-fold cross validation and TTA vhflip](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)   
+1. Download [the weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)   
 2. Run: 
-```
-python test.py --rect --modelname lawinloss4 --weight /path/to/HarDNet-DFUS_weight/folder --data_path /path/to/testing/data --tta vh
-```
+    ```
+    python test.py --rect --modelname lawinloss4 --weight /path/to/HarDNet-DFUS_weight/folder --data_path /path/to/testing/data --tta vh
+    ```
 
 ## Acknowledgement
 - This research is supported in part by a grant from the **Ministry of Science and Technology (MOST) of Taiwan**.   
