@@ -72,6 +72,7 @@ Optional Args:
 --tta          Test time augmentation, 'v/h/vh' for verti/horiz/verti&horiz flip
 --weight       It can be a weight or a fold. If it's a folder, the result is the mean of each weight result
 --data_path    Path to testing data
+--save_path    Path to saving prediction mask
 ```
 
 ### Evaluation :
@@ -87,7 +88,7 @@ Optional Args:
 
 ## Reproduce our best submission in DFUC 2022 Challenge Testing Stage 
 
-Download [the weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)
+Download [the weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)   
 
 ### **HarDNet-DFUS** with **5-fold cross validation** and **TTA vhflip**
 ```
