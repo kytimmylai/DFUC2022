@@ -5,7 +5,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from .kingnet import kingnet53
-from .kingnet2 import CSPkingnet53
 from .lawinloss import LawinHead5, LawinHead2
 
 
