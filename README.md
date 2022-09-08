@@ -22,6 +22,7 @@ We improve HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 | HarDNet-MSEG  | 65.53 | 55.22 | n/a | n/a |
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
 
+### Performance on Polyp Segmentation
 | Method | Kvasir <br> mDice | ClinicDB <br> mIoU | ColonDB <br> mDice | ETIS <br>  mIoU | CVC-T <br>  mIoU | FPS |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | HarDNet-MSEG  | 0.912 | 0.932 | 0.731 | 0.677 | 0.887 | 108 |
