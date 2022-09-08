@@ -25,8 +25,9 @@ We improve HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 ### Performance on Polyp Segmentation
 | Method | Kvasir <br> mDice | ClinicDB <br> mIoU | ColonDB <br> mDice | ETIS <br>  mIoU | CVC-T <br>  mIoU | FPS |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| HarDNet-MSEG  | 0.912 | 0.932 | 0.731 | 0.677 | **0.887** | 108 |
-| **HarDNet-DFUS**  |  **0.919**  | **0.939** | **0.774** | **0.739** | 0.880 | 30 |
+| HarDNet-MSEG  | 0.912 | 0.932 | 0.731 | 0.677 | 0.887 | **108** |
+| HarDNet-DFUS  |  0.919  | **0.939** | **0.774** | **0.739** | 0.880 | 30 |
+| HarDNet-DFUS 5-Fold  |  **0.924**  | 0.932 | 0.773 | 0.730 | **0.896** | 6 |
 
 ### Sample Inference and Visualized Results of [FUSeg Challenge Dataset](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
 
