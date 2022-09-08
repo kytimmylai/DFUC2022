@@ -23,7 +23,7 @@ We improve HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
 
 | Method | Kvasir <br> mDice | ClinicDB <br> mIoU | ColonDB <br> mDice | ETIS <br>  mIoU | CVC-T <br>  mIoU | FPS |
-| :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | HarDNet-MSEG  | 0.912 | 0.932 | 0.731 | 0.677 | 0.887 | 108 |
 | **HarDNet-DFUS**  |  **0.919**  | **0.939** | **0.774** | **0.739** | **0.880** | 30 |
 
