@@ -78,7 +78,7 @@ Optional Args:
 ### Evaluation
 Run:
 ```
-python eval_DFUC.py --image_root path/to/image/folder --gt_root path/to/ground truth/folder
+python evaluate.py --image_root path/to/image/folder --gt_root path/to/ground truth/folder
 
 Optional Args:
 --image_root    Path to predict result data
