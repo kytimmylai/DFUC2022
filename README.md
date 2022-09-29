@@ -23,6 +23,7 @@ We improve HarDNet-MSEG, enhancing its backbone and decoder for DFUC.
 | **HarDNet-DFUS**  |  **70.63**  | **60.49** | **72.87** | **62.52** |
 
 ### Sample Inference and Visualized Results of [FUSeg Challenge Dataset](https://github.com/uwm-bigdata/wound-segmentation/tree/master/data/Foot%20Ulcer%20Segmentation%20Challenge)
+(Due to the non-disclosure agreement of DFUC2022 dataset, we use another dataset to visualize the results)
 
 <p align="center">
 <img src="SAMPLE.png" width=90% height=90% 
