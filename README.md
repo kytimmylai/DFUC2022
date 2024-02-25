@@ -47,7 +47,7 @@ pip install -r requirements.txt
 
 ### Training
 
-1. Download [weights](https://drive.google.com/drive/folders/1UbuMKLUlCsZAusUVLJqwcBaXiwe0ZUe8?usp=sharing) and place in the folder ``` /weights ``` 
+1. Download [weights](https://huggingface.co/kytimmylai/DFUS-HarDNet/tree/main/DFUC) and place in the folder ``` /weights ``` 
 2. Run:
     ```
     python train.py --rect --augmentation --data_path /path/to/training/data
@@ -88,7 +88,7 @@ Optional Args:
 
 ## Reproduce our best submission in DFUC 2022 Challenge Testing Stage 
 
-1. Download [the weights for HarDNet-DFUS](https://drive.google.com/drive/folders/15hhsl1CIvOqa60friINmhnMB3qKRD-5p?usp=sharing) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)   
+1. Download [the weights for HarDNet-DFUS](https://huggingface.co/kytimmylai/DFUS-HarDNet/tree/main/lawinloss4) and place them in the same folder, specifying the folder in --weight when testing. (Please ensure there is no other weight in the folder to obtain the same result.)   
 2. Run **HarDNet-DFUS with 5-fold cross validation and TTA vhflip** : 
     ```
     python test.py --rect --modelname lawinloss4 --weight /path/to/HarDNet-DFUS_weight/folder --data_path /path/to/testing/data --tta vh
